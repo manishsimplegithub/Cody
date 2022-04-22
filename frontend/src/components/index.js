@@ -20,7 +20,7 @@ const Admin = () => {
   return (
     <div>
       <h1>Admin</h1>
-      <Sidebar sidebarOptions={sidebarOptions} title="Admin Dashboard ">
+      <Sidebar sidebarOptions={sidebarOptions} title="Admin Dashboard Page">
         <Outlet />
       </Sidebar>
     </div>
