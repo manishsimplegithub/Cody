@@ -1,6 +1,7 @@
 const mongooes = require("mongoose");
-const url ='mongodb+srv://<manish:manishsri>@cluster0.su4v9.mongodb.net/manish?retryWrites=true&w=majority';
-  
+const url =
+  "mongodb+srv://manish:manishsri@cluster0.su4v9.mongodb.net/cody?retryWrites=true&w=majority";
+
 mongooes
   .connect(url)
   .then(() => {

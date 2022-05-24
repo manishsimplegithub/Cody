@@ -57,7 +57,7 @@ const Home = () => {
                         <span>The best offer</span> <br />
                         <span className="text-primary">for your business</span>
                       </h1>
-                      <a 
+                      <a
                         className="btn btn-primary btn-lg py-3 px-5 me-md-2 mb-3"
                         href="#"
                         role="button"
