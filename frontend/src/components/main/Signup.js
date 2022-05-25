@@ -243,7 +243,7 @@ const Signup = () => {
                                 ></div>
                                 <div class="form-notch-trailing"></div>
                               </div>
-                            </div>
+                            </div> ..
                             <button
                               type="submit"
                               class="btn btn-primary btn-block mb-4"
