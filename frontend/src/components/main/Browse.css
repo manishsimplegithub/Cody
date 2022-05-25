@@ -1,0 +1,70 @@
+.header-text {
+    text-align: center; 
+    padding: 20px;
+}
+
+.top-card {
+    background-color: white;
+        
+}
+
+.header-card {
+    margin-top: 20px;
+    background-color: antiquewhite;
+    padding: 20px;
+
+}
+
+.content-main {
+    padding: 10px;
+    display: flex;
+}
+
+.content-main img{
+    width: 100%;
+}
+
+.search-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.search-field {
+    width: 60%;
+    align-content: center;
+}
+
+.search-button {
+    margin-left: 10px;
+}
+
+.card-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+    padding: 30px;
+}
+
+.card-3 {
+    display: flex;
+    gap: 15px;
+}
+
+.card h3 {
+    padding: 10px;
+}
+
+.card p {
+    padding: 10px;
+}
+
+
+.card-3 button {
+    width: 50%;     
+}
+.manish{
+ background-color: black;  
+}
