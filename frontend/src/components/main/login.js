@@ -18,7 +18,7 @@ const Login = () => {
   //   '/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
   const myValidation = Yup.object().shape({
     username: Yup.string()
-      .min(5, "UserName Must Five Letter")
+      .min(5, "UserName Must Five Letter") ,,..
       .max(20, "Too Long!")
       .required("UserName Required"),
     email: Yup.string()
