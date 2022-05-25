@@ -83,32 +83,7 @@ const Login = () => {
                           </div>
                         </div>
 
-                        <div class="form-outline mb-4">
-                          <input
-                            type="email"
-                            id="form3Example3"
-                            class="form-control active"
-                            autocompleted=""
-                          />
-                          <label
-                            class="form-label"
-                            for="form3Example3"
-                            styleName="margin-left: 0px"
-                          >
-                            Email address
-                          </label>
-                          <div class="form-notch">
-                            <div
-                              class="form-notch-leading"
-                              styleName="width: 9px"
-                            ></div>
-                            <div
-                              class="form-notch-middle"
-                              styleName="width: 88.8px"
-                            ></div>
-                            <div class="form-notch-trailing"></div>
-                          </div>
-                        </div>
+                        
                         <Formik
                           initialValues={{
                             username: "",
@@ -146,36 +121,32 @@ const Login = () => {
                             errors,
                             touched,
                           }) => (
-                            <div class="form-outline mb-4">
-                              <input
-                                type="password"
-                                id="form3Example4"
-                                class="form-control active"
-                                autocompleted=""
-                              />
-                              <label
-                                class="form-label"
-                                for="form3Example4"
-                                styleName="margin-left: 0px"
-                              >
-                                Password
-                              </label>
-                              <div class="form-notch">
-                                <div
-                                  class="form-notch-leading"
-                                  styleName="width: 9px"
-                                ></div>
-                                <div
-                                  class="form-notch-middle"
-                                  styleName="width: 64.8px"
-                                ></div>
-                                <div class="form-notch-trailing"></div>
-                              </div>
-                            </div>
-                          )}
-                        </Formik>
-                       
-                        <div style={{ float: "left" }}>
+                            <div class="form-outline mb-4" >     .....
+                          <input
+                            type="email"
+                            id="form3Example3"
+                            class="form-control active"
+                            autocompleted=""
+                          />
+                          <label
+                            class="form-label"
+                            for="form3Example3"
+                            styleName="margin-left: 0px"
+                          >
+                            Email address
+                          </label>
+                          <div class="form-notch">
+                            <div
+                              class="form-notch-leading"
+                              styleName="width: 9px"
+                            ></div>
+                            <div
+                              class="form-notch-middle"
+                              styleName="width: 88.8px"
+                            ></div>
+                            <div class="form-notch-trailing"></div>
+                          </div>
+                          <div style={{ float: "left" }}>
                           <button
                             type="submit"
                             class="btn btn-primary btn-block mb-4"
@@ -187,7 +158,7 @@ const Login = () => {
                             component={Link}
                             to="./components/main/signup"
                             style={{ margin: "0 0 0 10px" }}
-                            type="submit"
+                            type="button"
                             class="btn btn-success btn-block mb-4"
                             aria-controls="#picker-editor"
                             onClick={() => navigate("/main/signup")}
@@ -195,6 +166,11 @@ const Login = () => {
                             Sign Up
                           </button>
                         </div>
+                        </div>
+                          )}
+                        </Formik>
+                       
+                        
                         
                       </form>
                     </div>
