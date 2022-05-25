@@ -1,8 +1,8 @@
-const mongooes = require("mongoose");
+const mongoose = require("mongoose");
 const url =
   "mongodb+srv://manish:manishsri@cluster0.su4v9.mongodb.net/cody?retryWrites=true&w=majority";
 
-mongooes
+mongoose
   .connect(url)
   .then(() => {
     console.log("database connected");
@@ -10,4 +10,4 @@ mongooes
   .catch((err) => {
     console.log(err);
   });
-module.exports = mongooes;
+module.exports = mongoose;

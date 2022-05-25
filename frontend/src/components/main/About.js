@@ -1,6 +1,7 @@
 import React from "react";
 import nocode from "../../images/nocode.png";
 import "../../images/about.css";
+import "../../config";
 
 function About() {
   return (

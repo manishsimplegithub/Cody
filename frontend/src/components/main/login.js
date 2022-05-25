@@ -1,9 +1,39 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import app_config from "../../config";
+import { Formik } from "formik";
+import Swal from "sweetalert2";
+import * as Yup from "yup";
 // import {NavLink} from "react-router-dom";
 
 import "./style-signup.css";
-const Home = () => {
+const Login = () => {
+  const url = app_config.backend_url;
+  // for sendind formdata to database
+
+  //   4. Create Validation Schema
+  // const phoneRegExp =
+  //   '/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/';
+  // const emailRegExp =
+  //   '/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
+  const myValidation = Yup.object().shape({
+    username: Yup.string()
+      .min(5, "UserName Must Five Letter")
+      .max(20, "Too Long!")
+      .required("UserName Required"),
+    email: Yup.string()
+      // .matches(emailRegExp, "Email Invalid")
+      .required("Enter Email"),
+    mobile: Yup.string()
+      .min(10, "Enter Valid Mobile Number")
+      .max(10, "Mobile Number Must Be 10 Digits")
+      // .matches(phoneRegExp,"Mobile number is not valid")
+      .required("Phone No Required"),
+    password: Yup.string()
+      .min(6, "Too Short!!")
+      .max(12, "Very Long To Remember")
+      .required("Password Required"),
+  });
   const navigate = useNavigate();
 
   return (
@@ -49,57 +79,7 @@ const Home = () => {
                         <div class="row">
                           <div class="col-md-6 mb-4">
                             <div class="form-outline">
-                              {/* <input
-                                type="text"
-                                id="form3Example1"
-                                class="form-control"
-                              /> */}
-                              {/* <label
-                                class="form-label"
-                                for="form3Example1"
-                                styleName="margin-left: 0px"
-                              >
-                                First name
-                              </label> */}
-                              {/* <div class="form-notch">
-                                <div
-                                  class="form-notch-leading"
-                                  styleName="width: 9px"
-                                ></div>
-                                <div
-                                  class="form-notch-middle"
-                                  styleName="width: 68.8px"
-                                ></div>
-                                <div class="form-notch-trailing"></div>
-                              </div> */}
-                              {/* </div>
-                          </div>
-                          <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                              <input
-                                type="text"
-                                id="form3Example2"
-                                class="form-control"
-                              /> */}
-                              {/* <label
-                                class="form-label"
-                                for="form3Example2"
-                                styleName="margin-left: 0px"
-                              >
-                                Last name
-                              </label> */}
-                              {/* <div class="form-notch">
-                                <div
-                                  class="form-notch-leading"
-                                  styleName="width: 9px"
-                                ></div>
-                                <div
-                                  class="form-notch-middle"
-                                  styleName="width: 68px"
-                                ></div>
-                                <div class="form-notch-trailing"></div>
-                              </div> */}
-                            </div>
+                              z                            </div>
                           </div>
                         </div>
 
@@ -129,73 +109,72 @@ const Home = () => {
                             <div class="form-notch-trailing"></div>
                           </div>
                         </div>
+                        <Formik
+                          initialValues={{
+                            username: "",
+                            email: "",
+                            mobile: "",
+                            password: "",
+                          }}
+                          validationSchema={myValidation}
+                          onSubmit={(formdata) => {
+                            // same shape as initial values
+                            console.log(formdata);
 
-                        <div class="form-outline mb-4">
-                          <input
-                            type="password"
-                            id="form3Example4"
-                            class="form-control active"
-                            autocompleted=""
-                          />
-                          <label
-                            class="form-label"
-                            for="form3Example4"
-                            styleName="margin-left: 0px"
-                          >
-                            Password
-                          </label>
-                          <div class="form-notch">
-                            <div
-                              class="form-notch-leading"
-                              styleName="width: 9px"
-                            ></div>
-                            <div
-                              class="form-notch-middle"
-                              styleName="width: 64.8px"
-                            ></div>
-                            <div class="form-notch-trailing"></div>
-                          </div>
-                        </div>
-
-                        {/* <div class="form-outline mb-4">
-                          <input
-                            type="email"
-                            id="form3Example3"
-                            class="form-control active"
-                            autocompleted=""
-                          />
-                          <label
-                            class="form-label"
-                            for="form3Example3"
-                            styleName="margin-left: 0px"
-                          >
-                            Username
-                          </label>
-                          <div class="form-notch">
-                            <div
-                              class="form-notch-leading"
-                              styleName="width: 9px"
-                            ></div>
-                            <div
-                              class="form-notch-middle"
-                              styleName="width: 88.8px"
-                            ></div>
-                            <div class="form-notch-trailing"></div>
-                          </div>
-                        </div> */}
-
-                        {/* <div class="form-check d-flex justify-content-center mb-4">
-                          <input
-                            class="form-check-input me-2"
-                            type="checkbox"
-                            value=""
-                            id="form2Example33"
-                            checked=""
-                          />
-                          <label class="form-check-label" for="form2Example33">
-                            Subscribe to our newsletter
-                          </label>
-                        </div> */}
+                            fetch(url + "/user/add", {
+                              method: "POST",
+                              body: JSON.stringify(formdata),
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                            })
+                              .then((res) => res.json())
+                              .then((data) => {
+                                console.log(data);
+                                Swal.fire({
+                                  icon: "success",
+                                  title: "Success",
+                                  text: "Registered Successfully",
+                                });
+                              });
+                          }}
+                        >
+                          {({
+                            values,
+                            handleSubmit,
+                            handleChange,
+                            errors,
+                            touched,
+                          }) => (
+                            <div class="form-outline mb-4">
+                              <input
+                                type="password"
+                                id="form3Example4"
+                                class="form-control active"
+                                autocompleted=""
+                              />
+                              <label
+                                class="form-label"
+                                for="form3Example4"
+                                styleName="margin-left: 0px"
+                              >
+                                Password
+                              </label>
+                              <div class="form-notch">
+                                <div
+                                  class="form-notch-leading"
+                                  styleName="width: 9px"
+                                ></div>
+                                <div
+                                  class="form-notch-middle"
+                                  styleName="width: 64.8px"
+                                ></div>
+                                <div class="form-notch-trailing"></div>
+                              </div>
+                            </div>
+                          )}
+                        </Formik>
+                       
                         <div style={{ float: "left" }}>
                           <button
                             type="submit"
@@ -216,45 +195,7 @@ const Home = () => {
                             Sign Up
                           </button>
                         </div>
-                        {/* <div class="text-center">
-                          <p>or sign up with:</p>
-                          <button
-                            type="button"
-                            class="btn btn-link btn-floating mx-1"
-                          >
-                            <i
-                              class="fab fa-facebook-f"
-                              aria-controls="#picker-editor"
-                            ></i>
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-link btn-floating mx-1"
-                          >
-                            <i
-                              class="fab fa-google"
-                              aria-controls="#picker-editor"
-                            ></i>
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-link btn-floating mx-1"
-                          >
-                            <i
-                              class="fab fa-twitter"
-                              aria-controls="#picker-editor"
-                            ></i>
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-link btn-floating mx-1"
-                          >
-                            <i
-                              class="fab fa-github"
-                              aria-controls="#picker-editor"
-                            ></i>
-                          </button>
-                        </div> */}
+                        
                       </form>
                     </div>
                   </div>
@@ -268,4 +209,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

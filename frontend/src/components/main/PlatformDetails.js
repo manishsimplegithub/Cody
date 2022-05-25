@@ -1,19 +1,20 @@
 import React from "react";
 import "./Platform.css";
+import "../../config";
 function platformDetails() {
   return (
     <>
       <div className="method">
         <div className="content-main">
           <div className="name">
-          <img src="https://picsum.photos/260/200" alt="" />
+            <img src="https://picsum.photos/260/200" alt="" />
 
-          <hr />
-          <p>Lorem Ipsum is simply duhihiheihei</p>
-          <p>Lorem Ipsum is simply dummy text</p>
-          <p>Lorem Ipsum is simply dummy text</p>
+            <hr />
+            <p>Lorem Ipsum is simply duhihiheihei</p>
+            <p>Lorem Ipsum is simply dummy text</p>
+            <p>Lorem Ipsum is simply dummy text</p>
           </div>
-          
+
           <div className="content-card card ">
             <p>Lorem Ipsum is simply dummy text</p>
             <p>Lorem Ipsum is simply dummy text</p>

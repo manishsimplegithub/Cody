@@ -13,6 +13,7 @@ import AddPlatform from "./components/admin/addPlatform";
 import BrowsePlatform from "./components/main/BrowsePlatform";
 import PlatformDetails from "./components/main/PlatformDetails";
 import About from "./components/main/About";
+import Signup1 from "./components/main/Signup1";
 
 const app = () => {
   return (
@@ -33,6 +34,7 @@ const app = () => {
             <Route element={<BrowsePlatform />} path="BrowsePlatform" />
             <Route element={<PlatformDetails />} path="PlatformDetails" />
             <Route element={<About />} path="About" />
+            <Route element={<Signup1 />} path="Signup1" />
           </Route>
           <Route element={<User />} path="user"></Route>
           <Route element={<Navigate to="/main/home"></Navigate>} path="/" />

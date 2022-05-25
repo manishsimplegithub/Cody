@@ -1,5 +1,6 @@
 import React from "react";
 import "./Browse.css";
+import "../../config";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function BrowsePlatform() {

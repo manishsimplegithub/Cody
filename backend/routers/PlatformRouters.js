@@ -1,7 +1,7 @@
 // importing express
 const express = require("express");
 
-const Model = require("../routs/platformmodel");
+const Model = require("../models/platformmodel");
 
 // create router
 const router = express.Router();
