@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Home = () => {
   return (
     <div id="preview" className="preview">
@@ -81,7 +80,7 @@ const Home = () => {
                       style={{ zIndex: "1" }}
                     >
                       <img
-                        src="https://mdbootstrap.com/img/new/standard/city/017.jpg"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuuHmHD93pfUUjcGNi8_395VND9Xd1j7k2fg&usqp=CAU"
                         className="w-100 rounded-4 shadow-5"
                         alt=""
                         aria-controls="#picker-editor"
@@ -761,6 +760,6 @@ const Home = () => {
       </div>
     </div>
   );
-}; 
+};
 
 export default Home;

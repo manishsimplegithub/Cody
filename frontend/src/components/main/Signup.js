@@ -44,10 +44,10 @@ const Signup = () => {
                     <span style={{ color: "white" }}>for your business</span>
                   </h1>
                   <p class="mb-4 opacity-70" style={{ color: "white" }}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Temporibus, expedita iusto veniam atque, magni tempora
                     mollitia dolorum consequatur nulla, neque debitis eos
-                    reprehenderit quasi ab ipsum nisi dolorem modi. Quos?
+                    reprehenderit quasi ab ipsum nisi dolorem modi. Quos? */}
                   </p>
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -66,9 +66,9 @@ const Signup = () => {
                         initialValues={{
                           username: "",
                           email: "",
-                          mobile: "",
+
                           password: "",
-                          age:"",
+                          age: "",
                         }}
                         validationSchema={myValidation}
                         onSubmit={(formdata) => {
@@ -149,8 +149,10 @@ const Signup = () => {
                                 // placeholder="password"
                                 id="password"
                                 class="form-control active"
+                                value={values.password}
                                 autocompleted=""
                               />
+
                               {errors.password && touched.password ? (
                                 <div className="signup-error">
                                   {errors.password}
