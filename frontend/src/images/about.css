@@ -1,0 +1,22 @@
+/* .bdr{
+    display: flex;
+
+} */
+
+.tab-main{
+    padding: 20px;
+    background-color: bisque;
+}
+
+.tab-about{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: dotted 5px lightcoral;
+
+     /* background-color:lightcoral ; */
+}
+
+.tab-about p {
+    margin-right: 50px;
+}
